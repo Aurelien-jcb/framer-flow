@@ -73,17 +73,17 @@ export default function RootLayout({ children }: RootLayoutProps) {
               <Transition
                 as={Fragment}
                 show={showNav}
-                enter="transform transition duration-[400ms]"
+                enter="transform transition duration-400"
                 enterFrom="-translate-x-full"
                 enterTo="translate-x-0"
-                leave="transform duration-[400ms] transition ease-in-out"
+                leave="transform duration-400 transition ease-in-out"
                 leaveFrom="translate-x-0"
                 leaveTo="-translate-x-full"
               >
                 <SideBar items={siteConfig.mainNav} showNav={showNav} />
               </Transition>
               <main
-                className={`duration-[400ms] pt-8 transition-all ${
+                className={`duration-400 pt-8 transition-all ${
                   showNav && !isMobile ? "pl-56" : ""
                 }`}
               >
