@@ -1,9 +1,5 @@
 import { Icons } from "@/components/icons";
 
-
-
-
-
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {

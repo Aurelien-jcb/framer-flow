@@ -1,13 +1,11 @@
-import { Ref, forwardRef } from "react"
+import { forwardRef } from "react"
 import Link from "next/link"
-import { usePathname, useRouter } from "next/navigation"
+import { usePathname } from "next/navigation"
 
 import { NavItem } from "@/types/nav"
 import { siteConfig } from "@/config/site"
-import { cn } from "@/lib/utils"
 
 import { Icons } from "../icons"
-import { Separator } from "../ui/separator"
 
 interface SideBarProps {
   showNav?: boolean

@@ -2,9 +2,6 @@
 
 import { useTheme } from "next-themes"
 
-import { Button } from "@/components/ui/button"
-import { Separator } from "@/components/ui/separator"
-
 export default function SettingsAppearance() {
   const { setTheme, theme } = useTheme()
   return (
