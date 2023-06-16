@@ -14,7 +14,7 @@ import { Tabs, TabsContent } from "@/components/ui/tabs"
 import { CalendarDateRangePicker } from "@/components/dashboard/date-range-picker"
 import { Overview } from "@/components/dashboard/overview"
 import { RecentSales } from "@/components/dashboard/recent-sales"
-import { Icons } from "@/components/icons"
+import { Icons } from "@/components/shared/icons"
 
 export const metadata: Metadata = {
   title: "Dashboard",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 export default function DashboardPage() {
   return (
     <>
-      <div className="hidden flex-col md:flex">
+      <div className="flex-col md:flex">
         {/* <div className="border-b">
           <div className="flex h-16 items-center px-4">
             <TeamSwitcher />

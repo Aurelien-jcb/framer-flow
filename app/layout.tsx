@@ -4,13 +4,14 @@ import "@/styles/globals.css"
 import { Fragment, useEffect, useState } from "react"
 import { Transition } from "@headlessui/react"
 
+import { NavItem } from "@/types/nav"
 import { siteConfig } from "@/config/site"
 import { fontSans } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
 import SideBar from "@/components/layout/side-bar"
 import { TopBar } from "@/components/layout/top-bar"
-import { TailwindIndicator } from "@/components/tailwind-indicator"
-import { ThemeProvider } from "@/components/theme-provider"
+import { TailwindIndicator } from "@/components/shared/tailwind-indicator"
+import { ThemeProvider } from "@/components/shared/theme-provider"
 
 interface RootLayoutProps {
   children: React.ReactNode
@@ -41,7 +42,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   }, [])
   return (
     <>
-      <html lang="en" suppressHydrationWarning>
+      <html lang="fr" suppressHydrationWarning>
         <body
           className={cn(
             "min-h-screen bg-background font-sans antialiased",
@@ -50,7 +51,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         >
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <div className="relative flex min-h-screen flex-col">
-            <TopBar showNav={showNav} setShowNav={setShowNav} />
+              <TopBar showNav={showNav} setShowNav={setShowNav} />
               <Transition
                 as={Fragment}
                 show={showNav}
@@ -61,7 +62,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 leaveFrom="translate-x-0"
                 leaveTo="-translate-x-full"
               >
-                <SideBar items={siteConfig.mainNav} showNav={showNav} />
+                <SideBar
+                  items={siteConfig.mainNav}
+                  isMobile={isMobile}
+                  showNav={showNav}
+                  onClose={() => setShowNav(false)}
+                />
               </Transition>
               <main
                 className={`pt-8 transition-all duration-300 ${
