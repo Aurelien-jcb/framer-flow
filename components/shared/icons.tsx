@@ -1,38 +1,16 @@
-import {
-  Activity,
-  Bell,
-  Boxes,
-  Calculator,
-  Calendar,
-  Check,
-  ChevronLeft,
-  ChevronRight,
-  ClipboardList,
-  CreditCard,
-  Download,
-  Euro,
-  Home,
-  LayoutDashboard,
-  LogOut,
-  LucideProps,
-  Moon,
-  PackageSearch,
-  Settings,
-  SunMedium,
-  Truck,
-  Twitter,
-  User,
-  Users,
-  Circle,
-  X,
-  type Icon as LucideIcon,
-} from "lucide-react"
+import { Activity, Bell, Boxes, Calculator, Calendar, Check, ChevronLeft, ChevronRight, Circle, ClipboardList, CreditCard, Download, Euro, Home, LayoutDashboard, LogOut, Lock, LucideProps, Moon, PackageSearch, Settings, SunMedium, Truck, Twitter, User, Users, X, type Icon as LucideIcon, Loader2 } from "lucide-react";
+
+
+
+
 
 export type Icon = LucideIcon
 
 export const Icons = {
-  xIcon: X,
-  circle:Circle,
+  spinner: Loader2,
+  lock: Lock,
+  close: X,
+  circle: Circle,
   chevronLeft: ChevronLeft,
   chevronRight: ChevronRight,
   calendar: Calendar,
