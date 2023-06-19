@@ -1,6 +1,5 @@
 import { Metadata } from "next"
 import Image from "next/image"
-import { Activity, CreditCard, Download, Euro } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -41,7 +40,7 @@ export default function DashboardPage() {
             <div className="flex items-center space-x-2">
               <CalendarDateRangePicker />
               <Button size="sm">
-                <Download className="mr-2 h-4 w-4" />
+                <Icons.download className="mr-2 h-4 w-4" />
                 Télécharger un rapport
               </Button>
             </div>
@@ -66,7 +65,7 @@ export default function DashboardPage() {
                     <CardTitle className="text-sm font-medium">
                       Chiffre d&apos;affaire total
                     </CardTitle>
-                    <Euro className="h-4 w-4" />
+                    <Icons.euro className="h-4 w-4" />
                   </CardHeader>
                   <CardContent>
                     <div className="text-2xl font-bold">45,231.89€</div>
@@ -91,7 +90,7 @@ export default function DashboardPage() {
                     <CardTitle className="text-sm font-medium">
                       Ventes
                     </CardTitle>
-                    <CreditCard className="h-4 w-4 text-primary-foreground" />
+                    <Icons.creditCard className="h-4 w-4 text-primary-foreground" />
                   </CardHeader>
                   <CardContent>
                     <div className="text-2xl font-bold">+12,234</div>
@@ -105,7 +104,7 @@ export default function DashboardPage() {
                     <CardTitle className="text-sm font-medium">
                       Active Now
                     </CardTitle>
-                    <Activity className="h-4 w-4" />
+                    <Icons.activity className="h-4 w-4" />
                   </CardHeader>
                   <CardContent>
                     <div className="text-2xl font-bold">+573</div>
@@ -146,7 +145,7 @@ export default function DashboardPage() {
                     <CardTitle className="text-sm font-medium">
                       Chiffre d&apos;affaire total
                     </CardTitle>
-                    <Euro className="h-4 w-4" />
+                    <Icons.euro className="h-4 w-4" />
                   </CardHeader>
                   <CardContent>
                     <div className="text-2xl font-bold">45,231.89€</div>
@@ -171,7 +170,7 @@ export default function DashboardPage() {
                     <CardTitle className="text-sm font-medium">
                       Ventes
                     </CardTitle>
-                    <CreditCard className="h-4 w-4 text-primary-foreground" />
+                    <Icons.creditCard className="h-4 w-4 text-primary-foreground" />
                   </CardHeader>
                   <CardContent>
                     <div className="text-2xl font-bold">+12,234</div>
@@ -185,7 +184,7 @@ export default function DashboardPage() {
                     <CardTitle className="text-sm font-medium">
                       Active Now
                     </CardTitle>
-                    <Activity className="h-4 w-4" />
+                    <Icons.activity className="h-4 w-4" />
                   </CardHeader>
                   <CardContent>
                     <div className="text-2xl font-bold">+573</div>

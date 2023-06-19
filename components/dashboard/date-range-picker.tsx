@@ -3,12 +3,12 @@
 import * as React from "react";
 import { addDays, format } from "date-fns";
 import { fr } from 'date-fns/esm/locale';
-import { Calendar as CalendarIcon } from "lucide-react";
 import { DateRange } from "react-day-picker"
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { Icons } from "../shared/icons";
 
 export function CalendarDateRangePicker({
   className,
@@ -31,7 +31,7 @@ export function CalendarDateRangePicker({
               !date && "text-muted-foreground"
             )}
           >
-            <CalendarIcon className="mr-2 h-4 w-4" />
+            <Icons.calendar className="mr-2 h-4 w-4" />
             {date?.from ? (
               date.to ? (
                 <>
