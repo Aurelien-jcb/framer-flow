@@ -3,7 +3,7 @@ import { Popover, Transition } from "@headlessui/react"
 
 import { buttonVariants } from "@/components/ui/button"
 
-import { Icons } from "../shared/icons"
+import { Icons } from "../../lib/icons"
 
 export const NotificationButton = () => {
   return (

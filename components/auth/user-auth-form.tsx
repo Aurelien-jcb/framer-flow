@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
-import { Icons } from "../shared/icons"
+import { Icons } from "../../lib/icons"
 
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -55,17 +55,16 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
               disabled={isLoading}
             />
           </div>
-       <Button type="button" disabled={isLoading}>
-        {isLoading ? (
-          <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
-        ) : (
-          <Icons.lock className="mr-2 h-4 w-4" />
-        )}{" "}
-        Connexion
-      </Button>
+          <Button type="button" disabled={isLoading}>
+            {isLoading ? (
+              <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+            ) : (
+              <Icons.lock className="mr-2 h-4 w-4" />
+            )}{" "}
+            Connexion
+          </Button>
         </div>
       </form>
-
     </div>
   )
 }

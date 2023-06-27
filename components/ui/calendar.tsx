@@ -1,17 +1,11 @@
+/* eslint-disable react/display-name */
 "use client";
 
 import * as React from "react";
 import { DayPicker } from "react-day-picker"
-
-
-
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
-import { Icons } from "../shared/icons";
-
-
-
-
+import { Icons } from "@/lib/icons";
 
 export type CalendarProps = React.ComponentProps<typeof DayPicker>
 
@@ -60,8 +54,8 @@ function Calendar({
         ...classNames,
       }}
       components={{
-        IconLeft: ({ ...props }) => <Icons.chevronLeft className="h-4 w-4" />,
-        IconRight: ({ ...props }) => <Icons.chevronRight className="h-4 w-4" />,
+        IconLeft: () => <Icons.chevronLeft className="h-4 w-4" />,
+        IconRight: () => <Icons.chevronRight className="h-4 w-4" />,
       }}
       {...props}
     />

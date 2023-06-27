@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation"
 import { NavItem } from "@/types/nav"
 import { siteConfig } from "@/config/site"
 
-import { Icons } from "../shared/icons"
+import { Icons } from "../../lib/icons"
 
 interface SideBarProps {
   showNav?: boolean
@@ -24,7 +24,7 @@ const SideBar = forwardRef<HTMLDivElement, SideBarProps>(
         className="fixed z-40 h-full w-56 bg-background shadow-md"
       >
         <div className="mb-12 mt-6 flex justify-center">
-          <Link href="/" className="flex items-center space-x-2">
+          <Link passHref href="/" className="flex items-center space-x-2">
             <Icons.logo className="h-6 w-6" />
             <span className="inline-block font-bold text-primary">
               {siteConfig.name}
@@ -38,6 +38,7 @@ const SideBar = forwardRef<HTMLDivElement, SideBarProps>(
                 (item, index) =>
                   item.href && (
                     <Link
+                      passHref
                       key={index}
                       href={item.href}
                       className={`mx-5 mb-1 flex  cursor-pointer items-center rounded py-3 pl-6 text-center text-primary transition-colors ${

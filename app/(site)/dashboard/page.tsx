@@ -1,6 +1,7 @@
 import { Metadata } from "next"
 import Image from "next/image"
 
+import { Icons } from "@/lib/icons"
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -13,7 +14,6 @@ import { Tabs, TabsContent } from "@/components/ui/tabs"
 import { CalendarDateRangePicker } from "@/components/dashboard/date-range-picker"
 import { Overview } from "@/components/dashboard/overview"
 import { RecentSales } from "@/components/dashboard/recent-sales"
-import { Icons } from "@/components/shared/icons"
 
 export const metadata: Metadata = {
   title: "Dashboard",

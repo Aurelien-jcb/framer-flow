@@ -1,10 +1,10 @@
+import { Icons } from "@/lib/icons"
 import { buttonVariants } from "@/components/ui/button"
-import { Icons } from "@/components/shared/icons"
 
+import { ThemeToggle } from "../shared/theme-toggle"
 import { NotificationButton } from "../top-bar/notifications-button"
 import { Input } from "../ui/input"
 import { UserNav } from "./user-nav"
-import { ThemeToggle } from "../shared/theme-toggle"
 
 export function TopBar({
   showNav,
