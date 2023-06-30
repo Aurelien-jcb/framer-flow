@@ -1,0 +1,15 @@
+{
+  "routes": [
+    { "src": "/login", "dest": "./app/(auth)/login/page.tsx" },
+    { "src": "/register", "dest": "./app/(auth)/register/page.tsx" },
+    { "src": "/clients", "dest": "./app/(site)/clients/page.tsx" },
+    { "src": "/commandes", "dest": "./app/(site)/commandes/page.tsx" },
+    { "src": "/dashboard", "dest": "./app/(site)/dashboard/page.tsx" },
+    { "src": "/devis", "dest": "./app/(site)/devis/page.tsx" },
+    { "src": "/fournisseurs", "dest": "./app/(site)/fournisseurs/page.tsx" },
+    { "src": "/parametres", "dest": "./app/(site)/parametres/page.tsx" },
+    { "src": "/produits", "dest": "./app/(site)/produits/page.tsx" },
+    { "src": "/stocks", "dest": "./app/(site)/stocks/page.tsx" },
+    { "src": "/", "dest": "./app/(site)/page.tsx" }
+  ]
+}

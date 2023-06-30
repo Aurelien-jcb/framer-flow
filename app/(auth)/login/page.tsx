@@ -1,16 +1,8 @@
-"use client"
-
-import { Metadata } from "next"
 import { siteConfig } from "@/config/site"
 import { Icons } from "@/lib/icons"
 import { UserAuthForm } from "@/components/auth/user-auth-form"
 
-export const metadata: Metadata = {
-  title: "Connexion",
-  description: "Formulaire d'authentification.",
-}
-
-const Signin = async () => {
+const Signin = () => {
 
   return (
     <div className="align-center mx-auto flex flex-col justify-center space-y-6 sm:w-[350px]">
