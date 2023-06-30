@@ -21,7 +21,6 @@ export function TopBar({
     >
       <div className="cursor-pointer">
         <div
-          //  {`cursor-pointer  ${showNav ? "pl-60" : ""}`}
           className={buttonVariants({
             size: "sm",
             variant: "ghost",

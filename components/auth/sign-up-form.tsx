@@ -2,14 +2,7 @@
 
 import { useState } from "react";
 import axios from "axios";
-
-
-
 import { toast } from "@/components/ui/use-toast";
-
-
-
-
 
 export default function SignUpForm() {
   const [data, setData] = useState({
@@ -18,21 +11,21 @@ export default function SignUpForm() {
     password: "",
   })
 
-  const registerUser = async (e: { preventDefault: () => void }) => {
-    e.preventDefault()
-    axios
-      .post("/api/register", data)
-      .then(() =>
-        toast({
-          title: "user has been register",
-        })
-      )
-      .catch(() =>
-        toast({
-          title: "SOmething went wrong",
-        })
-      )
-  }
+  // const registerUser = async (e: { preventDefault: () => void }) => {
+  //   e.preventDefault()
+  //   axios
+  //     .post("/api/register", data)
+  //     .then(() =>
+  //       toast({
+  //         title: "user has been register",
+  //       })
+  //     )
+  //     .catch(() =>
+  //       toast({
+  //         title: "SOmething went wrong",
+  //       })
+  //     )
+  // }
 
   return (
     <>
@@ -44,7 +37,8 @@ export default function SignUpForm() {
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form className="space-y-6" onSubmit={registerUser}>
+          <form className="space-y-6">
+          {/* <form className="space-y-6" onSubmit={registerUser}> */}
             <div>
               <label
                 htmlFor="name"

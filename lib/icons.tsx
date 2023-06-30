@@ -1,9 +1,5 @@
 import { Activity, Bell, Boxes, Calculator, Calendar, Check, ChevronLeft, ChevronRight, Circle, ClipboardList, CreditCard, Download, Euro, Home, LayoutDashboard, LogOut, Lock, LucideProps, Moon, PackageSearch, Settings, SunMedium, Truck, Twitter, User, Users, X, type Icon as LucideIcon, Loader2 } from "lucide-react";
 
-
-
-
-
 export type Icon = LucideIcon
 
 export const Icons = {

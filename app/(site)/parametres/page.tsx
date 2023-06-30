@@ -1,7 +1,4 @@
 import { Metadata } from "next"
-
-import { Separator } from "@/components/ui/separator"
-// import { SidebarNav } from "@/app/examples/forms/components/sidebar-nav"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import SettingsAppearance from "@/components/settings/appearance/appearance"
 
@@ -21,7 +18,6 @@ export default function Settings() {
           </p>
         </div>
         <div className="mt-6 flex flex-col space-y-8 lg:flex-row lg:space-x-12 lg:space-y-0">
-          {/* <SidebarNav items={sidebarNavItems} /> */}
           <Tabs defaultValue="appearance" className="w-full">
             <TabsList>
               <TabsTrigger value="appearance">Apparence</TabsTrigger>

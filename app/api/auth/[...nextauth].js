@@ -2,8 +2,8 @@ import { PrismaAdapter } from "@next-auth/prisma-adapter"
 import NextAuth from "next-auth"
 import CredentialsProvider from "next-auth/providers/credentials"
 
-import prisma from "@/lib/prisma/utils/prisma.ts"
-import { signIn } from "@/lib/prisma/utils/users.js"
+import prisma from "@/prisma/utils/prisma.ts"
+import { signIn } from "@/prisma/utils/users.js"
 
 const authHandler = async (req, res) => {
    await NextAuth(req, res, {

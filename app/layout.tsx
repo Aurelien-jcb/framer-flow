@@ -5,11 +5,7 @@ import SessionProvider from "@/lib/providers/auth-provider";
 import { ThemeProvider } from "@/lib/providers/theme-provider";
 import { cn } from "@/lib/utils";
 import { TailwindIndicator } from "@/components/shared/tailwind-indicator";
-
-
-
 import "@/styles/globals.css";
-import { useSession } from "next-auth/react";
 
 
 interface RootLayoutProps {
@@ -17,13 +13,7 @@ interface RootLayoutProps {
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
-  // const useSession
-  //  if (status === 'loading') {
-  //   // Afficher un indicateur de chargement ou un écran de chargement si nécessaire
-  //   return <div>Loading...</div>
-  // }
 
-  // const isUserLoggedIn = session?.user
   return (
     <>
       <html lang="fr" suppressHydrationWarning>

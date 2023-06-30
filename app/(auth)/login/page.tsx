@@ -1,15 +1,8 @@
 "use client"
 
 import { Metadata } from "next"
-import Image from "next/image"
-import Link from "next/link"
-import { redirect } from "next/navigation"
-import { Command } from "lucide-react"
-
 import { siteConfig } from "@/config/site"
 import { Icons } from "@/lib/icons"
-import { cn } from "@/lib/utils"
-import { buttonVariants } from "@/components/ui/button"
 import { UserAuthForm } from "@/components/auth/user-auth-form"
 
 export const metadata: Metadata = {
@@ -18,9 +11,7 @@ export const metadata: Metadata = {
 }
 
 const Signin = async () => {
-  // const session = await getServerSession()
-  // // If already connected, can not access to `/signin`.
-  // if (session?.user) redirect("/")
+
   return (
     <div className="align-center mx-auto flex flex-col justify-center space-y-6 sm:w-[350px]">
       <div className="flex flex-col space-y-2 text-center">
