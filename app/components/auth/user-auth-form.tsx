@@ -25,9 +25,8 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
   const searchParams = useSearchParams()
   const [isLoading, setIsLoading] = useState(false)
   const router = useRouter()
-  // const callBackUrl = (router.query?.callBackUrl as string) ?? "/"
   const callBackUrl = (searchParams?.get("callbackUrl") as string) ?? "/"
-console.log(callBackUrl)
+
   const {
     register,
     handleSubmit,
@@ -40,7 +39,6 @@ console.log(callBackUrl)
   })
 
   const onSubmitForm: SubmitHandler<FieldValues> = (data) => {
-    console.log(data)
     setIsLoading(true)
     signIn("credentials", {
       ...data,
@@ -52,9 +50,7 @@ console.log(callBackUrl)
         toast.error(callback.error)
       }
       if (callback?.ok && !callback?.error) {
-        console.log(callback)
         toast.success("Connexion réussi")
-        // router.refresh()
         router.push(callBackUrl)
       }
     })

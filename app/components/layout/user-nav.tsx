@@ -12,6 +12,7 @@ import {
   DropdownMenuTrigger,
 } from "@/app/components/ui/dropdown-menu"
 import { Icons } from "@/app/libs/icons"
+import { signOut } from "next-auth/react"
 
 export function UserNav() {
   return (
@@ -49,7 +50,7 @@ export function UserNav() {
         <DropdownMenuSeparator />
         <DropdownMenuItem>
           <Icons.logOut className="mr-2 h-4 w-4" />
-          <span>Déconnexion</span>
+          <span onClick={() => signOut()}>Déconnexion</span>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

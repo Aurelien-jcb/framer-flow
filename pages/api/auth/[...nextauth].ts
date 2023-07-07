@@ -16,7 +16,8 @@ export const authOptions: AuthOptions = {
       async authorize(credentials) {
         try {
           if (!credentials?.email || !credentials?.password) {
-            throw new Error('Invalid credentials: email or password is missing');
+            // throw new Error('Invalid credentials: email or password is missing');
+            return null
           }
 
           const user = await prisma.user.findUnique({
@@ -26,18 +27,21 @@ export const authOptions: AuthOptions = {
           });
 
           if (!user || !user?.hashedPassword) {
-            throw new Error('Invalid credentials: user not found or hashed password missing');
+           return null
+            // throw new Error('Invalid credentials: user not found or hashed password missing');
           }
 
           const isCorrectPassword = await compare(credentials.password, user.hashedPassword);
 
           if (!isCorrectPassword) {
-            throw new Error('Invalid credentials: incorrect password');
+            return null
+            // throw new Error('Invalid credentials: incorrect password');
           }
 
           return user;
         } catch (error) {
           console.error('Error in authorize function:', error);
+          return null
           throw new Error('An error occurred during authentication');
         }
       }
@@ -45,6 +49,12 @@ export const authOptions: AuthOptions = {
   ],
   pages: {
     signIn: '/login',
+  },
+  callbacks: {
+    async jwt({ token }) {
+      token.isAdmin = true;
+      return token;
+    },
   },
   debug: process.env.NODE_ENV === 'development',
   session: {
