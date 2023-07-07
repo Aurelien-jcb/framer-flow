@@ -1,9 +1,8 @@
-import { siteConfig } from "@/config/site"
-import { Icons } from "@/lib/icons"
-import { UserAuthForm } from "@/components/auth/user-auth-form"
+import { Icons } from "@/app/libs/icons"
+import { UserAuthForm } from "@/app/components/auth/user-auth-form"
+import { siteConfig } from "@/app/config/site"
 
 const Signin = () => {
-
   return (
     <div className="align-center mx-auto flex flex-col justify-center space-y-6 sm:w-[350px]">
       <div className="flex flex-col space-y-2 text-center">

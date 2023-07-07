@@ -1,4 +1,4 @@
-import Loading from "@/components/shared/loader"
+import Loading from "@/app/components/shared/loader"
 
 const loading = () => <Loading />
 

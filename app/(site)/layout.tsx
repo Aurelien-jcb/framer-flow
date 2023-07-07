@@ -1,12 +1,12 @@
 "use client"
 
-import "@/styles/globals.css"
+import "@/app/globals.css"
 import { Fragment, useEffect, useState } from "react"
 import { Transition } from "@headlessui/react"
 
-import { siteConfig } from "@/config/site"
-import SideBar from "@/components/layout/side-bar"
-import { TopBar } from "@/components/layout/top-bar"
+import SideBar from "@/app/components/layout/side-bar"
+import { TopBar } from "@/app/components/layout/top-bar"
+import { siteConfig } from "@/app/config/site"
 
 interface RootLayoutProps {
   children: React.ReactNode

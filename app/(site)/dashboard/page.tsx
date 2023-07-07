@@ -1,17 +1,18 @@
 import { Metadata } from "next"
-import { Icons } from "@/lib/icons"
-import { Button } from "@/components/ui/button"
+
+import { CalendarDateRangePicker } from "@/app/components/dashboard/date-range-picker"
+import { Overview } from "@/app/components/dashboard/overview"
+import { RecentSales } from "@/app/components/dashboard/recent-sales"
+import { Button } from "@/app/components/ui/button"
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
-import { Tabs, TabsContent } from "@/components/ui/tabs"
-import { CalendarDateRangePicker } from "@/components/dashboard/date-range-picker"
-import { Overview } from "@/components/dashboard/overview"
-import { RecentSales } from "@/components/dashboard/recent-sales"
+} from "@/app/components/ui/card"
+import { Tabs, TabsContent } from "@/app/components/ui/tabs"
+import { Icons } from "@/app/libs/icons"
 
 export const metadata: Metadata = {
   title: "Dashboard",

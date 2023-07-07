@@ -1,5 +1,5 @@
 "use client"
-import SignUpForm from "@/components/auth/sign-up-form"
+import SignUpForm from "@/app/components/auth/sign-up-form"
 
 const Signup = async () => {
 

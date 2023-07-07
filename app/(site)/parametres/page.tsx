@@ -1,6 +1,6 @@
 import { Metadata } from "next"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import SettingsAppearance from "@/components/settings/appearance/appearance"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/app/components/ui/tabs"
+import SettingsAppearance from "@/app/components/settings/appearance/appearance"
 
 export const metadata: Metadata = {
   title: "Paramètres",
