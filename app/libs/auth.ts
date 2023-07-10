@@ -1,10 +1,10 @@
 import { compare } from "bcrypt";
-import NextAuth, { AuthOptions } from "next-auth";
+import NextAuth, { NextAuthOptions, User } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import prisma from "@/app/libs/prisma";
 
-export const authOptions: AuthOptions = {
+export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma),
   providers: [
     CredentialsProvider({
@@ -15,9 +15,8 @@ export const authOptions: AuthOptions = {
       },
       async authorize(credentials) {
         try {
-          if (!credentials?.email || !credentials?.password) {
-            // throw new Error('Invalid credentials: email or password is missing');
-            return null
+          if (!credentials || !credentials?.email || !credentials?.password) {
+            throw new Error('Invalid credentials: email or password is missing');
           }
 
           const user = await prisma.user.findUnique({
@@ -27,34 +26,45 @@ export const authOptions: AuthOptions = {
           });
 
           if (!user || !user?.hashedPassword) {
-           return null
-            // throw new Error('Invalid credentials: user not found or hashed password missing');
+            throw new Error('Invalid credentials: user not found or hashed password missing');
           }
 
           const isCorrectPassword = await compare(credentials.password, user.hashedPassword);
 
           if (!isCorrectPassword) {
-            return null
-            // throw new Error('Invalid credentials: incorrect password');
+            throw new Error('Invalid credentials: incorrect password');
           }
 
-          return user;
+          return user as User;
+
         } catch (error) {
           console.error('Error in authorize function:', error);
-          return null
           throw new Error('An error occurred during authentication');
         }
       }
     })
   ],
-  pages: {
-    signIn: '/login',
+  // callbacks: {
+  //   jwt: ({ token, user }) => {
+  //     if (user) {
+  //       token.id = user.id;
+  //     }
+
+  //     return token;
+  //   },
+  //   async session({ session, token }) {
+  //     if (token) {
+  //       session.id = token.id;
+  //     }
+
+  //     return session;
+  //   },
+  // },
+  jwt: {
+    secret: process.env.NEXTAUTH_SECRET
   },
-  callbacks: {
-    async jwt({ token }) {
-      token.isAdmin = true;
-      return token;
-    },
+  pages: {
+    signIn: "/login",
   },
   debug: process.env.NODE_ENV === 'development',
   session: {

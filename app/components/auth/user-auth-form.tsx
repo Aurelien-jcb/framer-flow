@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { signIn } from "next-auth/react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
@@ -38,7 +38,8 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
     },
   })
 
-  const onSubmitForm: SubmitHandler<FieldValues> = (data) => {
+  const onSubmitForm: SubmitHandler<FieldValues> = (data, event) => {
+    event?.preventDefault()
     setIsLoading(true)
     signIn("credentials", {
       ...data,
