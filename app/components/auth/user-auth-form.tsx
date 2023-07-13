@@ -1,23 +1,17 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import { useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
-import { signIn } from "next-auth/react";
-import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
-import { toast } from "react-hot-toast";
+import * as React from "react"
+import { useState } from "react"
+import { useRouter, useSearchParams } from "next/navigation"
+import { signIn } from "next-auth/react"
+import { FieldValues, SubmitHandler, useForm } from "react-hook-form"
+import { toast } from "react-hot-toast"
 
-
-
-import { Button } from "@/app/components/ui/button";
-import { Input } from "@/app/components/ui/input";
-import { Label } from "@/app/components/ui/label";
-import { Icons } from "@/app/libs/icons";
-import { cn } from "@/app/libs/utils";
-
-
-
-
+import { Button } from "@/app/components/ui/button"
+import { Input } from "@/app/components/ui/input"
+import { Label } from "@/app/components/ui/label"
+import { Icons } from "@/app/libs/icons"
+import { cn } from "@/app/libs/utils"
 
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -51,7 +45,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
         toast.error(callback.error)
       }
       if (callback?.ok && !callback?.error) {
-        toast.success("Connexion réussi")
+        toast.success("Connexion réussie")
         router.push(callBackUrl)
       }
     })

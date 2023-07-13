@@ -2,8 +2,10 @@ import Link from "next/link"
 
 import { buttonVariants } from "@/app/components/ui/button"
 import { siteConfig } from "@/app/config/site"
+import Test from "../components/home/test"
 
-export default function IndexPage() {
+export default async function IndexPage() {
+
   return (
     <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
       <div className="flex max-w-[980px] flex-col items-start gap-2">
@@ -15,6 +17,8 @@ export default function IndexPage() {
           Accessible and customizable components that you can copy and paste
           into your apps. Free. Open Source. And Next.js 13 Ready.
         </p>
+        <Test name="John" gender="male" salary={30}/>
+        <Test name="Ashley" gender="female" weight={5000}/>
       </div>
       <div className="flex gap-4">
         <Link

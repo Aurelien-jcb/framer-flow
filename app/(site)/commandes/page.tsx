@@ -1,7 +1,8 @@
+import TaskPage from "@/app/components/shared/table/table";
 import React from "react";
 
 const Orders = () => {
-  return <div>Commandes</div>;
+  return <TaskPage/>;
 };
 
 export default Orders;

@@ -11,6 +11,7 @@ interface InputProps {
   autoCapitalize?: string
   autoComplete?: string
   autoCorrect?: string
+  value?: string
   disabled?: boolean
   required?: boolean
   className?: string
@@ -26,6 +27,7 @@ const Input: React.FC<InputProps> = (
     autoCorrect,
     required,
     register,
+    value,
     errors,
     disabled,
     id,
@@ -36,6 +38,7 @@ const Input: React.FC<InputProps> = (
       id={id}
       disabled={disabled}
       type={type}
+      value={value}
       placeholder={placeholder}
       autoCapitalize={autoCapitalize}
       autoComplete={autoComplete}
