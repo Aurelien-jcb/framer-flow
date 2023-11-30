@@ -1,8 +1,6 @@
 import * as React from "react"
 import { Column } from "@tanstack/react-table"
-import { Check, LucideIcon, PlusCircle } from "lucide-react"
 
-import { cn } from "@/app/libs/utils"
 import { Badge } from "@/app/components/ui/badge"
 import { Button } from "@/app/components/ui/button"
 import {
@@ -20,6 +18,8 @@ import {
   PopoverTrigger,
 } from "@/app/components/ui/popover"
 import { Separator } from "@/app/components/ui/separator"
+import { Icon, Icons } from "@/app/libs/icons"
+import { cn } from "@/app/libs/utils"
 
 interface DataTableFacetedFilter<TData, TValue> {
   column?: Column<TData, TValue>
@@ -27,7 +27,7 @@ interface DataTableFacetedFilter<TData, TValue> {
   options: {
     label: string
     value: string
-    icon?: LucideIcon
+    icon?: Icon
   }[]
 }
 
@@ -43,7 +43,7 @@ export function DataTableFacetedFilter<TData, TValue>({
     <Popover>
       <PopoverTrigger asChild>
         <Button variant="outline" size="sm" className="h-8 border-dashed">
-          <PlusCircle className="mr-2 h-4 w-4" />
+          <Icons.plusCircle className="mr-2 h-4 w-4" />
           {title}
           {selectedValues?.size > 0 && (
             <>
@@ -111,7 +111,7 @@ export function DataTableFacetedFilter<TData, TValue>({
                           : "opacity-50 [&_svg]:invisible"
                       )}
                     >
-                      <Check className={cn("h-4 w-4")} />
+                      <Icons.checkIcon className={cn("h-4 w-4")} />
                     </div>
                     {option.icon && (
                       <option.icon className="mr-2 h-4 w-4 text-muted-foreground" />

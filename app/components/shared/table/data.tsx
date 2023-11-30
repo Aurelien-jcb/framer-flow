@@ -1,8 +1,4 @@
-import { ArrowDown, ArrowRight, ArrowUpCircle, ArrowUpLeftIcon, CheckCircle2, Circle, HelpCircle, XCircle } from "lucide-react";
-
-
-
-
+import { Icons } from "@/app/libs/icons"
 
 export const labels = [
   {
@@ -23,27 +19,27 @@ export const statuses = [
   {
     value: "backlog",
     label: "Backlog",
-    icon: HelpCircle,
+    icon: Icons.helpCircle,
   },
   {
     value: "todo",
     label: "Todo",
-    icon: Circle,
+    icon: Icons.circle,
   },
   {
     value: "in progress",
     label: "In Progress",
-    icon: ArrowUpCircle,
+    icon: Icons.arrowUpCircle,
   },
   {
     value: "done",
     label: "Done",
-    icon: CheckCircle2,
+    icon: Icons.checkCircle2,
   },
   {
     value: "canceled",
     label: "Canceled",
-    icon: XCircle,
+    icon: Icons.xCircle,
   },
 ]
 
@@ -51,16 +47,16 @@ export const priorities = [
   {
     label: "Low",
     value: "low",
-    icon: ArrowDown,
+    icon: Icons.arrowDown,
   },
   {
     label: "Medium",
     value: "medium",
-    icon: ArrowRight,
+    icon: Icons.arrowRight,
   },
   {
     label: "High",
     value: "high",
-    icon: ArrowUpLeftIcon,
+    icon: Icons.arrowUpLeft,
   },
 ]
